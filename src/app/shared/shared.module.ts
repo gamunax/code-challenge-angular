@@ -1,26 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { SearchComponent } from './search/search.component';
+import { NgModule } from '@angular/core';
 import { CardComponent } from './card/card.component';
-
-
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     SearchComponent,
-    CardComponent
+    CardComponent,
   ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    SearchComponent
-  ]
+  imports: [CommonModule],
+  exports: [HeaderComponent, FooterComponent, SearchComponent, CardComponent],
 })
-export class SharedModule { }
+export class SharedModule {}
