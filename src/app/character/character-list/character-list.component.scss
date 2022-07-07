@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  margin-top: 18px;
+  width: 612px;
+}
+
+.container-empty {
+  &__message {
+    text-align: center;
+  }
+}
+
+.container-loading {
+  &__message {
+    text-align: center;
+  }
+}
