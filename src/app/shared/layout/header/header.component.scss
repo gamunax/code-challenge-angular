@@ -1,0 +1,13 @@
+.container-header {
+  align-items: center;
+  background-color: #5a5a5a;
+  display: flex;
+  justify-content: center;
+
+  &__title {
+    color: #fcb7b7;
+    font-size: 40px;
+    margin: 18px 0;
+    line-height: 50px;
+  }
+}
