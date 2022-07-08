@@ -1,6 +1,6 @@
 # Angular 11 Challenge
 
-Application from Rick and Morty
+Application Rick and Morty character search app
 
 --
 
