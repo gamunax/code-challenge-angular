@@ -1,3 +1,5 @@
+@import "abstracts/mixins/mixins";
+
 .container-header {
   align-items: center;
   background-color: #5a5a5a;
@@ -9,5 +11,9 @@
     font-size: 40px;
     margin: 18px 0;
     line-height: 50px;
+
+    @include small {
+      font-size: 32px;
+    }
   }
 }

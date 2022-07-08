@@ -1,3 +1,5 @@
+@import "abstracts/mixins/mixins";
+
 .container {
   height: 100%;
   margin: 0 auto;
@@ -16,6 +18,11 @@ cdk-virtual-scroll-viewport {
     gap: 28px;
     width: 500px;
     justify-content: center;
+
+    @include small {
+      grid-template-columns: repeat(1, 292px);
+      width: 100%;
+    }
   }
 
   app-card {

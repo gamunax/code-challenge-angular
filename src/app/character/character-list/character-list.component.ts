@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharacterResults } from '@shared/interfaces/character';
 import { CharacterDataSource } from '@shared/scroll-infinite/character.dataSource';
 import { CharacterService } from '@shared/services/character.service';
+
 @Component({
   selector: 'app-character-list',
   templateUrl: './character-list.component.html',
