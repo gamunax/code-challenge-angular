@@ -13,11 +13,11 @@ export class CharacterListComponent implements OnInit {
   characters: CharacterResults[] = [];
   characterDataSource!: CharacterDataSource;
 
-  constructor(private characterService: CharacterService) {
+  constructor(private characterService: CharacterService) {}
+
+  ngOnInit(): void {
     this.characterDataSource = new CharacterDataSource(this.characterService);
   }
-
-  ngOnInit(): void {}
 
   getSearchValue(value: string): void {
     this.characterDataSource.searchValue = value;
