@@ -7,7 +7,13 @@ import { CharacterResults } from '../../interfaces/character';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  @Input() character!: CharacterResults;
+  @Input() character: CharacterResults = {
+    id: 1,
+    name: '',
+    image: '',
+    gender: '',
+    species: '',
+  };
 
   constructor() {}
 

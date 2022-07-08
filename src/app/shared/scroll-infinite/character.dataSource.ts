@@ -17,14 +17,13 @@ export class CharacterDataSource extends DataSource<CharacterResults> {
   constructor(private characterService: CharacterService) {
     super();
     this.isConstructor = true;
-    this.getCharactersAll();
+    this.getAllCharacters();
   }
 
   connect(collectionViewer: CollectionViewer): Observable<CharacterResults[]> {
     collectionViewer.viewChange
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((range) => {
-        console.log(range);
         this.currentPage = Math.floor(range.end / this.pageSize) + 1;
         if (this.currentPage > this.lastCurrentPage) {
           this.lastCurrentPage = this.currentPage;
@@ -39,13 +38,13 @@ export class CharacterDataSource extends DataSource<CharacterResults> {
             return;
           }
 
-          this.getCharactersAll(this.currentPage);
+          this.getAllCharacters(this.currentPage);
         }
       });
     return this.characterChange$;
   }
 
-  getCharactersAll(currentPage = 1): void {
+  getAllCharacters(currentPage = 1): void {
     this.characterService
       .getAllCharacters(currentPage)
       .subscribe(({ results }) => {
@@ -60,7 +59,7 @@ export class CharacterDataSource extends DataSource<CharacterResults> {
 
   getCharacterByName(value: string, currentPage = 1): void {
     if (!value) {
-      this.getCharactersAll();
+      this.getAllCharacters();
       return;
     }
 
