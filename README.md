@@ -1,27 +1,55 @@
-# CodeChallenge
+# Angular 11 Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.18.
+Application from Rick and Morty
 
-## Development server
+--
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Starting 🚀
 
-## Code scaffolding
+_These instructions will allow you to get a working copy of the project on your premises for development and testing purposes._
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Pre-requeriments 📋
 
-## Build
+_This demo has the following environment_
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+NodeJS 16.13.2
+Angular CLI 11.2.19
+@angular/cdk 11.2.13
+```
 
-## Running unit tests
+### Installation 🔧
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+_Installation of dependencies (node_modules)_
 
-## Running end-to-end tests
+```
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+_Local deploy_
 
-## Further help
+```
+ng serve or npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+_Test deploy_
+
+```
+ng test
+```
+
+_This is what it would look like when run_
+
+![rick-morty](https://i.ibb.co/q7mP3Wf/rick-morty.png)
+
+_This is what it would look like when run test_
+
+![test](https://i.ibb.co/5npdyvL/coverage.png)
+
+## Build with 🛠️
+
+- [Angular](https://angular.io/) - El framework web usado
+
+## Autor ✒️
+
+- **Jan Pierre Sánchez**
