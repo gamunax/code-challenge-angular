@@ -27,11 +27,16 @@ export class SearchComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     fromEvent(this.input?.nativeElement, 'keyup')
       .pipe(
-        debounceTime(500),
+        debounceTime(400),
         distinctUntilChanged(),
         tap(() => {
           const value = this.input?.nativeElement.value;
           if (value && value?.length > 3) {
+            this.searchValue.emit(value);
+          }
+
+          if (!value) {
+            console.log('xx', value);
             this.searchValue.emit(value);
           }
         })
@@ -41,7 +46,6 @@ export class SearchComponent implements OnInit, AfterViewInit {
 
   search(value: string): void {
     if (value && value?.length > 3) {
-      console.log(value);
       this.searchValue.emit(value);
     }
   }

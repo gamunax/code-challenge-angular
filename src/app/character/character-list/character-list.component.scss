@@ -1,13 +1,34 @@
 .container {
-  display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
   margin: 0 auto;
   margin-top: 18px;
-  width: 612px;
+  position: relative;
+}
+
+cdk-virtual-scroll-viewport {
+  min-height: 100%;
+  height: calc(100vh);
+  // height: calc(100vh - 132px);
+
+  ::ng-deep .cdk-virtual-scroll-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 292px);
+    gap: 28px;
+    width: 500px;
+    justify-content: center;
+  }
+
+  app-card {
+    height: 117px;
+  }
 }
 
 .container-empty {
+  position: absolute;
+  top: 180px;
+  right: 50%;
+  transform: translate(50%, -50%);
+
   &__message {
     text-align: center;
   }

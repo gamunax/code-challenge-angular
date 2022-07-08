@@ -1,4 +1,10 @@
 <div class="container-search">
   <input #input class="container-search__input" type="text" autofocus />
-  <button type="button" class="container-search__button">Search</button>
+  <button
+    type="button"
+    class="container-search__button"
+    (click)="search(input.value)"
+  >
+    Search
+  </button>
 </div>

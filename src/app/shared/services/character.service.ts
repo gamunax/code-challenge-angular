@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '@enviroment';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment.prod';
+
 import { Character } from '../interfaces/character';
 
 @Injectable({
@@ -10,15 +11,13 @@ import { Character } from '../interfaces/character';
 export class CharacterService {
   constructor(private http: HttpClient) {}
 
-  getAllCharacters(): Observable<Character> {
-    const url = `${environment.baseUrlApi}/character/?page=1`;
+  getAllCharacters(page = 1): Observable<Character> {
+    const url = `${environment.baseUrlApi}/character/?page=${page}`;
     return this.http.get<Character>(url);
   }
 
-  searchCharacters(query = '', page = 1): Observable<Character> {
-    console.log(query);
-    const url = `${environment.baseUrlApi}/character/?name=${query}&page=${page}`;
-    console.log(url);
+  getCharacterByName(name = '', page = 1): Observable<Character> {
+    const url = `${environment.baseUrlApi}/character/?name=${name}&page=${page}`;
     return this.http.get<Character>(url);
   }
 }

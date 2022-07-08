@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
 import { CharacterResults } from '../../shared/interfaces/character';
+import { CharacterDataSource } from '../../shared/scroll-infinit/character.dataSource';
 import { CharacterService } from '../../shared/services/character.service';
 
 @Component({
@@ -10,39 +10,16 @@ import { CharacterService } from '../../shared/services/character.service';
 })
 export class CharacterListComponent implements OnInit {
   characters: CharacterResults[] = [];
-  isLoading = false;
-  value = '';
+  characterDataSource!: CharacterDataSource;
 
-  constructor(private characterService: CharacterService) {}
-
-  ngOnInit(): void {
-    this.getAllCharacters();
+  constructor(private characterService: CharacterService) {
+    this.characterDataSource = new CharacterDataSource(this.characterService);
   }
 
-  getAllCharacters(): void {
-    this.characterService.getAllCharacters().subscribe(({ results }) => {
-      this.characters = results;
-    });
-  }
+  ngOnInit(): void {}
 
   getSearchValue(value: string): void {
-    console.log(value);
-    this.value = value;
-    this.getCharacters(value);
-  }
-
-  getCharacters(value: string): void {
-    this.isLoading = true;
-    this.characterService
-      .searchCharacters(value)
-      .pipe(finalize(() => (this.isLoading = false)))
-      .subscribe(
-        ({ results }) => {
-          this.characters = results;
-        },
-        () => {
-          this.characters = [];
-        }
-      );
+    this.characterDataSource.searchValue = value;
+    this.characterDataSource.getCharacterByName(value);
   }
 }
