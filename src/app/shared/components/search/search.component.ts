@@ -32,8 +32,8 @@ export class SearchComponent implements OnInit, AfterViewInit {
   handleKeyUp(): void {
     fromEvent(this.input.nativeElement, 'keyup')
       .pipe(debounceTime(400), distinctUntilChanged())
-      .subscribe((res) => {
-        const value = this.input.nativeElement.value;
+      .subscribe((res: any) => {
+        const value = res?.target?.value;
         if (value && value?.length > 3) {
           this.searchValue.emit(value);
         }
