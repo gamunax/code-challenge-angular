@@ -4,6 +4,10 @@ Application from Rick and Morty
 
 --
 
+## Considerations
+
+Currently the rick and morty api does not support a dynamic limit, that's why show 20 characters by page (limit default api)
+
 ## Starting 🚀
 
 _These instructions will allow you to get a working copy of the project on your premises for development and testing purposes._
